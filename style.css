@@ -1,0 +1,90 @@
+body {
+	margin: 0;
+	overflow: hidden;
+}
+.window {
+	background: url(img/bg.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+}
+.earth {
+	position: absolute;
+	margin-top: calc(50vh - 250px);
+	margin-left: calc(50vw - 250px);
+	height: 500px;
+	width: 500px;
+	background: url(img/sprite.png);
+	animation: earth-x .5s steps(5) infinite,
+		earth-y 2s steps(4) infinite;
+	z-index: 1;
+}
+.moon img {
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	animation: moon 5s infinite linear;
+}
+.meteor img {
+	width: 100px;
+	position: absolute;
+	width: 100px;
+	animation: meteor 4s infinite ease-out;
+	z-index: 0;
+}
+
+
+@keyframes earth-x {
+	0% {
+		background-position-x: 0;
+	}
+	100% {
+		background-position-x: -2500px;
+	}
+}
+@keyframes earth-y {
+	0% {
+		background-position-y: 0;
+	}
+	100% {
+		background-position-y: -2000px;
+	}
+}
+
+@keyframes moon {
+	0% {
+		margin-left: 47vw;
+		margin-top: 35vh;
+		transform: rotate(0);
+	}
+	25% {
+		margin-left: 32vw;
+		margin-top: 45vh;
+	}
+	50% {
+		margin-left: 47vw;
+		margin-top: 55vh;
+		z-index: 2;
+	}
+	75% {
+		margin-left: 63vw;
+		margin-top: 45vh;
+	}
+	100% {
+		margin-left: 47vw;
+		margin-top: 35vh;
+		transform: rotate(-360deg);
+	}
+}
+
+@keyframes meteor {
+	0% {
+		margin-left: 70vw;
+		margin-top: 0;
+	}
+	100% {
+		margin-left: 0;
+		margin-top: 98vh;
+	}
+}
